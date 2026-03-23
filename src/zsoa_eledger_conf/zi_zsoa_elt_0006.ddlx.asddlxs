@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'zsoa_elt_0006', 
+    typeNamePlural: 'zsoa_elt_0006s', 
+    title: {
+      type: #STANDARD, 
+      label: 'E-Defter Hesap Metinleri', 
+      value: 'Hkont'
+    }
+  }
+}
+annotate view ZI_zsoa_elt_0006 with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Copy', 
+    label: 'Seçilen girişi kopyala', 
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_zsoa_elt_0006', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'E-Defter Hesap Metinleri', 
+    position: 1 
+  } ]
+  Hkont;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Text_000;
+}

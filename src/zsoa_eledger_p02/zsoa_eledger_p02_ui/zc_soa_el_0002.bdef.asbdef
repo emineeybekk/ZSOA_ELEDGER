@@ -1,0 +1,13 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_SOA_EL_0002 alias elc
+{
+//  use create;
+//  use update;
+//  use delete;
+
+  use action AppDoc;
+//  use action CancDoc;
+//    use action ExportCSV;
+}

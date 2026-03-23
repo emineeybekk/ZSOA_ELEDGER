@@ -1,0 +1,138 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'E-Defter',
+    typeNamePlural: 'E-Defterler',
+    title: {
+        type: #STANDARD,
+        value: 'Bukrs'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'Monat'
+    }
+}
+@UI.presentationVariant: [{ maxItems: 9999 }]
+annotate entity ZC_SOA_EL_0001 with
+{
+  /* =========================
+     FACET – HEADER
+     ========================= */
+  @UI.facet: [
+    {
+      id: 'Header',
+      purpose: #STANDARD,
+      
+      position: 10,
+      label: 'Başlık Bilgileri',
+      type: #IDENTIFICATION_REFERENCE
+    }
+  ]
+
+  /* =========================
+     LIST REPORT – LINE ITEM
+     ========================= */
+  @UI.lineItem: [
+    { position: 10,  value: 'Bukrs'},
+    { position: 20,  value: 'Gjahr' },
+    { position: 30,  value: 'Monat' },
+     { position: 40,  value: 'MonatText' },
+    { position: 50,  value: 'Rldnr' },
+    { position: 60,  value: 'Status' },
+    { position: 70,  value: 'StatusT' },
+    { position: 80,  value: 'Toplamalacak',     label: 'Alacak Tutarı' },
+    { position: 90,  value: 'Toplamborc' , label: 'Borç Tutarı'  },
+    { position: 100,  value: 'Toplam' ,      label: 'Tutar' },
+    { position: 110,  value: 'Waers' },
+    { position: 120, value: 'Topsatirsayi' },
+    { position: 130, value: 'Createdby' },
+    { position: 140, value: 'Createdat' },
+    { position: 150, value: 'LocalChangedBy' },
+    { position: 160, value: 'LastChangedAt' }
+  ]
+
+  /* =========================
+     OBJECT PAGE – IDENTIFICATION
+     ========================= */
+  @UI.identification: [
+    { position: 10,  value: 'Bukrs', label: 'Şirket Kodu' },
+    { position: 20,  value: 'Gjahr', label: 'Yıl' },
+    { position: 30,  value: 'Monat', label: 'Ay' },
+    { position: 40,  value: 'MonatText', label: 'Kayıt Dönem Tanımı' },
+    { position: 50,  value: 'Rldnr' },
+    { position: 60,  value: 'RunUuid' },
+    { position: 70,  value: 'Printaltacc' },
+    { position: 80,  value: 'Status' },
+    { position: 90,  value: 'Firstymno' },
+    { position: 100,  value: 'Lastymno' },
+    { position: 110, value: 'Toplamalacak',     label: 'Alacak Tutarı' },
+    { position: 120, value: 'Toplamborc'  , label: 'Borç Tutarı'  },
+    { position: 130, value: 'Toplam' ,      label: 'Tutar' },
+    { position: 140, value: 'Waers' },
+    { position: 150, value: 'Topsatirsayi' },
+    { position: 160, value: 'Createdby' },
+    { position: 170, value: 'Createdat' },
+    { position: 180, value: 'LocalChangedBy' },
+    { position: 190, value: 'LastChangedAt' }
+  ]
+
+  /* =========================
+     SELECTION FIELDS
+     ========================= */
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [ { entity: { name: 'I_CompanyCode', element: 'CompanyCode' } } ]
+  Bukrs;
+
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [
+    { entity: { name: 'ZI_soa_el_VH_Gjahr', element: 'FiscalYear' } }
+  ]
+  Gjahr;
+
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.valueHelpDefinition: [
+  { entity: { name: 'ZI_soa_el_VH_Month', element: 'Monat' } }
+  ]
+  @UI.textArrangement: #TEXT_LAST
+
+
+  Monat;
+  @UI.selectionField: [{ position: 40 }]
+  @UI.hidden: true
+  MonatText;
+
+  @UI.selectionField: [{ position: 50 }]
+
+  @UI.lineItem:        [{ position: 50, label: 'Status'  } , { type: #FOR_ACTION, dataAction: 'SSAVE', label: 'Belge Oluştur' },
+                          { type: #FOR_ACTION, dataAction: 'SCANC', label: 'Belge İptal'}]
+
+
+//  @UI.identification:         [{ position: 50 } , { type: #FOR_ACTION, dataAction: 'SSAVE', label: 'Belge Oluştur' },
+//                        { type: #FOR_ACTION, dataAction: 'SCANC', label: 'Belge İptal'}]
+  Status;
+
+
+
+  /* =========================
+     SEMANTIC / DISPLAY
+     ========================= */
+  //  @UI.textArrangement: #TEXT_LAST
+  //  Status;
+
+  /* =========================
+     HIDDEN TECHNICAL KEY
+     ========================= */
+    @UI.hidden: true
+    StatusT;
+
+//    MonatText;
+//  @UI.readOnly: true
+  //  LastChangedBy;
+  //  @UI.hidden: true
+  //  LastChangedAt;
+  //  @UI.hidden: true
+  //  Createdby;
+//  //  @UI.hidden: true
+//  //  Createdat;
+@UI.hidden: true
+Printaltacc;
+}

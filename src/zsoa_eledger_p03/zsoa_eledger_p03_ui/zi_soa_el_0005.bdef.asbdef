@@ -1,0 +1,18 @@
+unmanaged implementation in class zbp_i_soa_el_0005 unique;
+strict ( 2 );
+
+define behavior for ZI_SOA_EL_0005 //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create ( authorization : global );
+//  update;
+//  delete;
+//  field ( readonly ) RunUuid;
+
+  field ( readonly ) Attachment ,LastChangedAt, LocalLastChangedBy, LocalLastChangedAt , LocalCreatedBy ,
+                      LocalCreatedAt;
+  action ( features : instance ) CancDoc;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'E-Defter Liste Servis def.'
+define service ZUI_SOA_EL_0002 {
+  expose ZC_SOA_EL_0002 as List;
+}

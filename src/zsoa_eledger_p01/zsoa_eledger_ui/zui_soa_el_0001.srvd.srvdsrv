@@ -1,0 +1,5 @@
+@EndUserText.label: 'E-Defter Kayıt Servis def.'
+@ObjectModel.leadingEntity.name: 'ZC_SOA_EL_0001'
+define service ZUI_SOA_EL_0001 {
+  expose ZC_SOA_EL_0001 as Create;
+}

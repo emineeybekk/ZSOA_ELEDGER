@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZSOA_ELT_0009', 
+    typeNamePlural: 'ZSOA_ELT_0009s', 
+    title: {
+      type: #STANDARD, 
+      label: 'E-Defter Şirket Kodu VKN Tablosu', 
+      value: 'Bukrs'
+    }
+  }
+}
+annotate view ZI_ZSOA_ELT_0009 with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Copy', 
+    label: 'Seçilen girişi kopyala', 
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZSOA_ELT_0009', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'E-Defter Şirket Kodu VKN Tablosu', 
+    position: 1 
+  } ]
+  Bukrs;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Stcd2;
+}

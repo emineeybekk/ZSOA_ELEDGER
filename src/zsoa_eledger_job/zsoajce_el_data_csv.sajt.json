@@ -1,0 +1,31 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "E-Defter csv job temp.",
+    "originalLanguage": "tr",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZSOAIT_EL_DATA_CSV"
+  },
+  "parameters": {
+    "valueRangesParameters": [
+      {
+        "name": "IV_BUKRS",
+        "valueRanges": []
+      },
+      {
+        "name": "IV_GJAHR",
+        "valueRanges": []
+      },
+      {
+        "name": "IV_MONAT",
+        "valueRanges": []
+      },
+      {
+        "name": "IV_RUNID",
+        "valueRanges": []
+      }
+    ]
+  }
+}

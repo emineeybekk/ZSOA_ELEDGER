@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "E-Defter catalog ent.",
+    "originalLanguage": "tr",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZCL_SOA_EL_DATA_CREATE"
+  },
+  "parameters": [
+    {
+      "name": "IV_RUNID"
+    },
+    {
+      "name": "IV_BUKRS"
+    },
+    {
+      "name": "IV_GJAHR"
+    },
+    {
+      "name": "IV_MONAT"
+    }
+  ]
+}

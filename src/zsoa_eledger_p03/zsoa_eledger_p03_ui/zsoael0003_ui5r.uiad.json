@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "E-Defter CSV Listesi",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "E-Defter CSV Listesi"
+  },
+  "ui5AppDetails": {
+    "appId": "com.soapeople.zsoael0003"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_D17A4D5D7829AC457F0F9D53A2A8B9AC8E7BAA78_TM",
+    "semanticObject": "zsoael0003",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_D17A4D5D7829AC457F0F9D53A2A8B9AC8E7BAA78_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "E-Defter CSV Listesi",
+        "subtitle": "E-Defter Csv Listesi"
+      }
+    }
+  ]
+}

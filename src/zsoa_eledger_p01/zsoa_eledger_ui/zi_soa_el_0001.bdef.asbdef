@@ -1,0 +1,63 @@
+unmanaged implementation in class zbp_i_soa_el_0001 unique;
+strict ( 2 );
+
+
+define behavior for ZI_SOA_EL_0001 alias ELC
+late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+
+
+  update ( features : instance );
+  delete ( features : instance );
+
+  field ( readonly : update ) Bukrs, Gjahr, Monat;
+  field ( mandatory : create ) Bukrs, Gjahr, Monat;
+action ( features : instance ) setButtonAct result [1] $self;
+  action ( features : instance ) SSAVE;
+  action ( features : instance ) SCANC;
+
+  field ( readonly )
+   RunUuid,
+  Rldnr,
+  Status,
+  Firstymno,
+  Lastymno,
+  Toplamalacak,
+  Toplamborc,
+  Toplam,
+  Waers,
+  Topsatirsayi,
+  Createdby,
+  Createdat,
+  LocalChangedBy,
+  LocalChangedAt,
+  LastChangedAt;
+mapping for zsoa_elt_0001
+{
+  RunUuid        = run_uuid;
+  Bukrs          = bukrs;
+  Gjahr          = gjahr;
+  Rldnr          = rldnr;
+  Monat          = monat;
+  MonatText          = monattext;
+  Printaltacc    = printaltacc;
+  Status         = status;
+  Firstymno      = firstymno;
+  Lastymno       = lastymno;
+  Toplamalacak   = toplamalacak;
+  Toplamborc     = toplamborc;
+  Toplam         = toplam;
+  Topsatirsayi   = topsatirsayi;
+  Waers          = waers;
+  Createdby      = createdby;
+  Createdat      = createdat;
+  LocalChangedBy  = local_last_changed_by ;
+   LocalChangedAt  = local_last_changed_at ;
+  LastChangedAt  = last_changed_at;
+}
+
+}

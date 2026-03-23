@@ -1,0 +1,87 @@
+managed with additional save implementation in class ZBP_I_ZSOA_ELT_0006 unique;
+strict;
+with draft;
+define behavior for ZI_zsoa_elt_0006_S alias zsoa_elt_0006S
+draft table ZSOA_ELT_0006S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _zsoa_elt_0006 { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT
+  {
+    create;
+    update;
+  }
+
+  side effects
+  {
+    action SelectCustomizingTransptReq affects
+        $self;
+  }
+
+}
+
+define behavior for ZI_zsoa_elt_0006 alias zsoa_elt_0006 ##UNMAPPED_FIELD
+persistent table ZSOA_ELT_0006
+draft table ZSOA_ELT_0006D
+lock dependent by _zsoa_elt_0006S
+authorization dependent by _zsoa_elt_0006S
+{
+  field ( mandatory : create )
+   Hkont;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Hkont;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  factory action ( features : instance ) Copy parameter ZD_zsoa_elt_0006 [1];
+
+  mapping for ZSOA_ELT_0006
+  {
+    Hkont = HKONT;
+    Text_000 = TEXT;
+  }
+
+  association _zsoa_elt_0006S { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT
+  {
+    create;
+    update;
+    delete;
+  }
+
+}

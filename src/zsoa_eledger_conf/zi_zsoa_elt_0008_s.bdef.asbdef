@@ -1,0 +1,64 @@
+managed with additional save implementation in class ZBP_I_ZSOA_ELT_0008 unique;
+strict;
+with draft;
+define behavior for ZI_zsoa_elt_0008_S alias zsoa_elt_0008S
+draft table ZSOA_ELT_0008S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _zsoa_elt_0008 { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_zsoa_elt_0008 alias zsoa_elt_0008 ##UNMAPPED_FIELD
+persistent table ZSOA_ELT_0008
+draft table ZSOA_ELT_0008D
+lock dependent by _zsoa_elt_0008S
+authorization dependent by _zsoa_elt_0008S
+{
+  field ( mandatory : create )
+   Blart;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Blart;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  factory action ( features : instance ) Copy parameter ZD_zsoa_elt_0008 [1];
+
+  mapping for ZSOA_ELT_0008
+  {
+    Blart = BLART;
+    Otype = OTYPE;
+  }
+
+  association _zsoa_elt_0008S { with draft; }
+
+}

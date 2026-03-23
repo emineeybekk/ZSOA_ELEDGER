@@ -1,0 +1,17 @@
+//projection implementation in class zbp_c_soa_el_0001 unique;
+projection ;
+strict ( 2 );
+//strict;
+//use draft;
+use side effects;
+define behavior for ZC_SOA_EL_0001 alias ELC
+use etag
+{
+  use create;
+  use update;
+  use delete;
+  use action SSAVE;
+  use action SCANC;
+//use function GetDefaultsForCreate;
+// use action checkMaintenance;
+}

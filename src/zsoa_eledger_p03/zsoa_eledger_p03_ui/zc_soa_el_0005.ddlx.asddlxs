@@ -1,0 +1,96 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'RunUuid',
+    typeNamePlural: 'E-Defter CSV Listesi',
+    title: { type: #STANDARD, value: 'Bukrs' },
+    description: { type: #STANDARD, value: 'Gjahr' }
+  },
+  presentationVariant: [{
+    sortOrder: [{ by: 'RunUuid', direction: #ASC }],
+    visualizations: [{ type: #AS_LINEITEM }]
+  }]
+}
+annotate entity ZC_SOA_EL_0005 with
+{
+
+  /* -------------------- FACETS -------------------- */
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      type: #COLLECTION,
+      label: 'Detay Bilgileri',
+      position: 10
+    },
+    {
+      id: 'Iddet',
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'GeneralInfo',
+      position: 10
+    },
+    {
+      id: 'Upload',
+      type: #FIELDGROUP_REFERENCE,
+      parentId: 'GeneralInfo',
+      label: 'Doküman',
+      targetQualifier: 'Upload',
+      position: 20
+    }
+  ]
+
+  /* -------------------- KEY -------------------- */
+  @UI.hidden: true
+  @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Id Number' },
+  { type:#FOR_ACTION, dataAction: 'CancDoc', label: 'Reddet-İptal Et' } ]
+
+  @UI.identification: [{ position: 10, label: 'Id Number' },
+  { type:#FOR_ACTION, dataAction: 'CancDoc', label: 'Reddet-İptal Et' }]
+  RunUuid;
+
+  /* -------------------- COMPANY CODE -------------------- */
+  @UI.lineItem: [{ position: 20, importance: #HIGH, label: 'Şirket Kodu' }]
+  @UI.identification: [{ position: 20, label: 'Şirket Kodu' }]
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{
+      entity: { name: 'I_CompanyCode', element: 'CompanyCode' }
+  }]
+  Bukrs;
+
+  /* -------------------- FISCAL YEAR -------------------- */
+  @UI.lineItem: [{ position: 30, importance: #HIGH, label: 'Yıl' }]
+  @UI.identification: [{ position: 30, label: 'Yıl' }]
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [{
+      entity: { name: 'I_FiscalYear', element: 'FiscalYear' }
+  }]
+  Gjahr;
+
+  /* -------------------- PERIOD -------------------- */
+  @UI.lineItem: [{ position: 40, importance: #HIGH, label: 'Kayıt Dönem' }]
+  @UI.identification: [{ position: 40, label: 'Kayıt Dönem' }]
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.valueHelpDefinition: [{
+      entity: { name: 'ZI_soa_el_VH_Month', element: 'Monat' }
+  }]
+  Monat;
+
+  @UI.hidden: true
+  MonatText;
+
+  /* -------------------- LEDGER -------------------- */
+  @UI.lineItem: [{ position: 60, importance: #HIGH, label: 'Defter' }]
+  @UI.identification: [{ position: 60, label: 'Defter' }]
+  Rldnr;
+
+  /* -------------------- ATTACHMENT -------------------- */
+  @UI.lineItem: [{ position: 70, importance: #HIGH, label: 'Dosya' }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'Upload', label: 'Dosya' }]
+  Attachment;
+
+  @UI.hidden: true
+  Mimetype;
+
+  @UI.hidden: true
+  Filename;
+
+}

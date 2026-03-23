@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_zsoa_elt_0006_S'
+define service ZUI_ZSOA_ELT_0006 {
+  expose ZI_ZSOA_ELT_0006_S as zsoa_elt_0006S;
+  expose ZI_ZSOA_ELT_0006 as zsoa_elt_0006;
+}

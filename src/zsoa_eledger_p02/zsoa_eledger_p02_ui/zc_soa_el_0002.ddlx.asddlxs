@@ -1,0 +1,156 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Muhasebe Satırı',
+    typeNamePlural: 'Muhasebe Satırları',
+    title: {
+        type: #STANDARD,
+        value: 'Belnr'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'Bukrs'
+    }
+}
+@UI.presentationVariant: [{ maxItems: 9999 }]
+annotate entity ZC_SOA_EL_0002 with
+{
+
+  /* =========================
+     FACET
+     ========================= */
+  @UI.facet: [
+    {
+      id: 'General',
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Genel Bilgiler',
+      type: #IDENTIFICATION_REFERENCE
+    }
+  ]
+
+
+  /* =========================
+     LIST REPORT – LINE ITEM
+     ========================= */
+  @UI.lineItem: [
+  { type:#FOR_ACTION, dataAction: 'AppDoc', label: 'Onayla'   },
+//  { type:#FOR_ACTION, dataAction: 'CancDoc', label: 'Reddet-İptal Et' },
+    { position: 10,  value: 'RunUuid',    label: 'Run UUID' },
+    { position: 20,  value: 'Item',       label: 'Kalem ID' },
+
+    { position: 30,  value: 'Bukrs',      label: 'Şirket Kodu',  qualifier: 'KEYS'},
+    { position: 40,  value: 'Gjahr',      label: 'Mali Yıl' },
+    { position: 50,  value: 'Monat',      label: 'Kayıt Dönemi' },
+    { position: 60,  value: 'MonatText',  label: 'Kayıt Dönem Tanımı' },
+    { position: 70,  value: 'Belnr',      label: 'Belge No' },
+    { position: 80,  value: 'Bldat',      label: 'Belge Tarihi' },
+    { position: 90,  value: 'Budat',      label: 'Kayıt Tarihi' },
+    { position: 100, value: 'Blart',      label: 'Belge Türü' },
+    { position: 110, value: 'Buzei',      label: 'Kalem No' },
+    { position: 120, value: 'Hkont',      label: 'Ana Hesap' },
+      { position: 130, value: 'Hkont2',      label: 'Ana Hesap' },
+    { position: 140, value: 'Akont',      label: 'Alt Hesap' },
+    { position: 150, value: 'Dmbtr',      label: 'Tutar' },
+    { position: 160, value: 'Waers',      label: 'Para Birimi' },
+    { position: 170, value: 'Shkzg',      label: 'Borç/Alacak' },
+    { position: 180, value: 'Uname',      label: 'Giriş Yapan Kullanıcı' },
+    { position: 190, value: 'DmbtrS',     label: 'Borç Tutarı' },
+    { position: 200, value: 'DmbtrH',     label: 'Alacak Tutarı' }
+  ]
+
+
+  /* =========================
+     OBJECT PAGE – IDENTIFICATION
+     ========================= */
+  @UI.identification: [
+
+        { position: 10,  value: 'RunUuid',    label: 'Run UUID' },
+    { position: 20,  value: 'Item',       label: 'Kalem ID' },
+
+    { position: 30,  value: 'Bukrs',      label: 'Şirket Kodu' },
+    { position: 40,  value: 'Gjahr',      label: 'Mali Yıl' },
+    { position: 50,  value: 'Monat',      label: 'Kayıt Dönemi' },
+    { position: 60,  value: 'MonatText',  label: 'Kayıt Dönem Tanımı' },
+    { position: 70,  value: 'Belnr',      label: 'Belge Numarası' },
+    { position: 80,  value: 'Belnr2',     label: 'Belge Numarası (2)',hidden: true  },
+    { position: 90,  value: 'Bldat',      label: 'Belge Tarihi' },
+    { position: 100, value: 'Budat',      label: 'Kayıt Tarihi' },
+    { position: 110, value: 'Budat2',     label: 'Kayıt Tarihi (2)' },
+    { position: 120, value: 'Blart',      label: 'Belge Türü' },
+    { position: 130, value: 'Btype',      label: 'Belge Tipi' },
+    { position: 140, value: 'Btext',      label: 'Belge Tipi Açıklaması' },
+    { position: 150, value: 'MaddeNo',    label: 'Yevmiye Madde No' },
+    { position: 160, value: 'MaddeNo2',   label: 'Yevmiye Madde No (2)' },
+    { position: 170, value: 'Buzei',      label: 'Kalem No' },
+//    { position: 180, value: 'Buzei2',     label: 'Muhasebe Satır No' },
+    { position: 190, value: 'Hkont',      label: 'Ana Hesap Numarası' },
+     { position: 200, value: 'Hkont',      label: 'Ana Hesap Numarası' },
+    { position: 210, value: 'Htext',      label: 'Ana Hesap Tanımı' },
+    { position: 220, value: 'Akont',      label: 'Alt Hesap Numarası' },
+    { position: 230, value: 'Atext',      label: 'Alt Hesap Tanımı' },
+    { position: 240, value: 'Dmbtr',      label: 'Tutar' },
+    { position: 250, value: 'DmbtrS',     label: 'Borç Tutarı' },
+    { position: 260, value: 'DmbtrH',     label: 'Alacak Tutarı' },
+    { position: 270, value: 'DmbtrDec',   label: 'Ulusal Para Birimi Tutarı' },
+    { position: 280, value: 'Waers',      label: 'Para Birimi' },
+    { position: 290, value: 'Shkzg',      label: 'Borç/Alacak Göstergesi' },
+    { position: 300, value: 'Xblnr',      label: 'Referans Belge No' },
+    { position: 310, value: 'Xref2Hd',    label: 'Referans Anahtar (Header)' ,hidden: true },
+    { position: 320, value: 'Otype',      label: 'Ödeme Tipi' },
+    { position: 330, value: 'Sgtxt',      label: 'Yevmiye Satırı Açıklaması' },
+    { position: 340, value: 'Ktxt',       label: 'Kayıt Açıklaması' },
+    { position: 350, value: 'Kayitno',    label: 'Kayıt Tanıtıcısı', hidden: true },
+    { position: 360, value: 'Bktxt',      label: 'Belge Başlık Açıklaması' },
+    { position: 370, value: 'Uname',      label: 'Giriş Yapan Kullanıcı' }
+
+  ]
+
+
+  /* =========================
+     SELECTION FIELDS
+     ========================= */
+
+  @UI.selectionField: [{ position: 10 }]
+  Bukrs;
+
+  @UI.selectionField: [{ position: 20 }]
+  Gjahr;
+
+  @UI.selectionField: [{ position: 30 }]
+  Monat;
+
+  @UI.selectionField: [{ position: 40 }]
+  MonatText;
+
+  @UI.selectionField: [{ position: 50 }]
+  Belnr;
+
+  @UI.selectionField: [{ position: 60 }]
+  Budat;
+
+
+  /* =========================
+     HIDDEN TECHNICAL KEYS
+     ========================= */
+
+    @UI.hidden: true
+    RunUuid;
+  //
+    @UI.hidden: true
+    Item;
+   @UI.hidden: true
+    MaddeNo2;
+   @UI.hidden: true
+    Ktxt;
+  @UI.hidden: true
+    Belnr2;
+    
+      @UI.hidden: true
+    Budat2;
+    
+          @UI.hidden: true
+    Xref2Hd;
+    
+          @UI.hidden: true
+    DmbtrDec;
+}

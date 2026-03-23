@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "E-Defter Listeleme",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "E-Defter Listeleme"
+  },
+  "ui5AppDetails": {
+    "appId": "com.soapeople.zsoael0002"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_548A1ECC62625AC430624936B0EF06F7EAD89AB4_TM",
+    "semanticObject": "zsoael0002",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_548A1ECC62625AC430624936B0EF06F7EAD89AB4_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "E-Defter Listeleme",
+        "subtitle": "E-Defter Listeleme"
+      }
+    }
+  ]
+}

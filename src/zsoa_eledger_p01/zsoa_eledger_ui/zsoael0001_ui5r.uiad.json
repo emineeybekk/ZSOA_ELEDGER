@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "E-Defter Oluşturma Ekranı"
+  },
+  "ui5AppDetails": {
+    "appId": "com.soapeople.zsoael0001"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_FD60D3C62CDA35FA66EFE5A7EAF237A78130FCDD_TM",
+    "semanticObject": "zsoael0001",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_FD60D3C62CDA35FA66EFE5A7EAF237A78130FCDD_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "E-Defter Oluşturma Ekranı",
+        "subtitle": "E-Defter Oluşturma Ekranı"
+      }
+    }
+  ]
+}

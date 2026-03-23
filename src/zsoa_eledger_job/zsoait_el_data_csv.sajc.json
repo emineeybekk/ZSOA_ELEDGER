@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "E-Defter CSV job ent.",
+    "originalLanguage": "tr",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZCL_SOA_EL_DATA_CSV_DOWN"
+  },
+  "parameters": [
+    {
+      "name": "IV_RUNID"
+    },
+    {
+      "name": "IV_BUKRS"
+    },
+    {
+      "name": "IV_GJAHR"
+    },
+    {
+      "name": "IV_MONAT"
+    }
+  ]
+}

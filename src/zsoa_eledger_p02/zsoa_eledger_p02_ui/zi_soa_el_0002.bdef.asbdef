@@ -1,0 +1,21 @@
+unmanaged implementation in class zbp_i_soa_el_0002 unique;
+strict ( 2 );
+
+define behavior for ZI_SOA_EL_0002 alias elc
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) RunUuid, Item;
+ field (mandatory) Bukrs;
+  field (mandatory) Monat;
+  action ( features : instance ) AppDoc;
+//  action ( features : instance ) CancDoc;
+//  static action ExportCSV
+//    parameter ZI_SOA_EL_0002
+//    result [1] ZC_SOA_EL_CSV_DOWNLOAD;
+}

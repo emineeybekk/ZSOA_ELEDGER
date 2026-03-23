@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'zsoa_elt_0008', 
+    typeNamePlural: 'zsoa_elt_0008s', 
+    title: {
+      type: #STANDARD, 
+      label: 'E-defter Ödeme Tipleri Tablosu', 
+      value: 'Blart'
+    }
+  }
+}
+annotate view ZI_zsoa_elt_0008 with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Copy', 
+    label: 'Seçilen girişi kopyala', 
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_zsoa_elt_0008', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'E-defter Ödeme Tipleri Tablosu', 
+    position: 1 
+  } ]
+  Blart;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Otype;
+}

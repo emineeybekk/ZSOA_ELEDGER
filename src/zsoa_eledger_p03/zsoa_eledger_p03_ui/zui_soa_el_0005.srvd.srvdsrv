@@ -1,0 +1,4 @@
+@EndUserText.label: 'CSV'
+define service ZUI_SOA_EL_0005 {
+  expose ZC_SOA_EL_0005 as CSVList;
+}

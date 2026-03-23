@@ -1,0 +1,18 @@
+projection;
+strict ( 2 );
+//use draft;
+use side effects;
+define behavior for ZC_SOA_EL_0005 //alias <alias_name>
+use etag
+{
+  use action CancDoc;
+//  use create;
+//  use update;
+//  use delete;
+
+//      use action Edit;
+//    use action Activate;
+//    use action Discard;
+//    use action Resume;
+//    use action Prepare;
+}
